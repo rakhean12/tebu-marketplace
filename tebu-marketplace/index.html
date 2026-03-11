@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketplace Hasil Petani Tebu</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Konfigurasi Tailwind untuk warna custom -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'hijau-tebu': '#2E7D32',
+                        'kuning-tebu': '#FBC02D',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50">
+    
+    <!-- NAVBAR -->
+    <nav class="bg-hijau-tebu text-white shadow-lg fixed w-full top-0 z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <h1 class="text-2xl font-bold">🌾 Tebu Marketplace</h1>
+                <ul class="flex space-x-6">
+                    <li><a href="#home" class="hover:text-kuning-tebu transition">Home</a></li>
+                    <li><a href="#produk" class="hover:text-kuning-tebu transition">Produk</a></li>
+                    <li><a href="#petani" class="hover:text-kuning-tebu transition">Petani</a></li>
+                    <li><a href="#laporan" class="hover:text-kuning-tebu transition">Laporan</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="bg-kuning-tebu pt-24 pb-16">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-5xl font-bold text-hijau-tebu mb-4">Marketplace Hasil Petani Tebu</h2>
+            <p class="text-xl text-gray-700 max-w-2xl mx-auto">
+                Platform digital untuk menampilkan dan mengelola hasil panen tebu dari petani lokal. 
+                Memudahkan akses informasi produk dan pelaporan data secara realtime.
+            </p>
+        </div>
+    </section>
+
+    <!-- SEARCH SECTION -->
+    <section class="bg-white py-8 shadow-md">
+        <div class="container mx-auto px-4">
+            <div class="max-w-2xl mx-auto">
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    placeholder="🔍 Cari produk atau petani..." 
+                    class="w-full px-6 py-4 text-lg border-2 border-hijau-tebu rounded-lg focus:outline-none focus:ring-2 focus:ring-kuning-tebu"
+                >
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUK SECTION -->
+    <section id="produk" class="py-16">
+        <div class="container mx-auto px-4">
+            <h3 class="text-4xl font-bold text-hijau-tebu mb-8 text-center">Produk Tersedia</h3>
+            
+            <!-- Loading indicator -->
+            <div id="loading" class="text-center py-8">
+                <p class="text-xl text-gray-600">Memuat data produk...</p>
+            </div>
+            
+            <!-- Grid produk -->
+            <div id="produkGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Produk cards akan ditampilkan di sini oleh JavaScript -->
+            </div>
+            
+            <!-- Pesan jika tidak ada produk -->
+            <div id="noProduk" class="hidden text-center py-8">
+                <p class="text-xl text-gray-600">Tidak ada produk ditemukan</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PETANI SECTION -->
+    <section id="petani" class="bg-gray-100 py-16">
+        <div class="container mx-auto px-4">
+            <h3 class="text-4xl font-bold text-hijau-tebu mb-8 text-center">Daftar Petani</h3>
+            <div id="petaniList" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <!-- Daftar petani akan ditampilkan di sini oleh JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- LAPORAN SECTION -->
+    <section id="laporan" class="py-16">
+        <div class="container mx-auto px-4">
+            <h3 class="text-4xl font-bold text-hijau-tebu mb-8 text-center">Laporan Statistik</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                
+                <!-- Total Produk -->
+                <div class="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-xl transition">
+                    <div class="text-5xl mb-4">📦</div>
+                    <h4 class="text-2xl font-bold text-hijau-tebu mb-2">Total Produk</h4>
+                    <p id="totalProduk" class="text-4xl font-bold text-kuning-tebu">0</p>
+                </div>
+                
+                <!-- Total Stok -->
+                <div class="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-xl transition">
+                    <div class="text-5xl mb-4">📊</div>
+                    <h4 class="text-2xl font-bold text-hijau-tebu mb-2">Total Stok</h4>
+                    <p id="totalStok" class="text-4xl font-bold text-kuning-tebu">0</p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-hijau-tebu text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2024 Marketplace Hasil Petani Tebu. Semua hak dilindungi.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+/* Custom CSS untuk animasi dan styling tambahan */
+
+/* Smooth scroll untuk navigasi */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Animasi untuk card produk */
+.product-card {
+    transition: all 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Animasi untuk petani card */
+.petani-card {
+    transition: all 0.3s ease;
+}
+
+.petani-card:hover {
+    transform: scale(1.05);
+}
+
+/* Loading animation */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+#loading {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Styling untuk search input focus */
+#searchInput:focus {
+    border-color: #2E7D32;
+}
+
+/* Responsive navbar untuk mobile */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #2E7D32;
+        padding: 1rem;
+        display: none;
+    }
+    
+    nav ul.active {
+        display: flex;
+    }
+    
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+}
+
+/* Badge styling */
+.badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.badge-success {
+    background-color: #2E7D32;
+    color: white;
+}
+
+.badge-warning {
+    background-color: #FBC02D;
+    color: #1F2937;
+}
+
+/* Price styling */
+.price {
+    color: #2E7D32;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
